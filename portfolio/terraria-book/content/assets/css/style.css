@@ -7,12 +7,13 @@ html, body {
 	height: 100%;
 	margin: 0;
 	width: 100%;
-	position: relative;
+	/* min-width: 760px; */
 }
 
 .fx-col {
 	display: flex;
 	flex-direction: column;
+	/* min-width: 986px; */
 	max-width: 1366px;
 }
 
@@ -31,7 +32,10 @@ img {
 }
 
 main {
+	/* display: flex; */
 	height: 100%;
+	/* flex-wrap: wrap; */
+	/* flex-direction: column; */
 	width: 100%;
 }
 
@@ -84,6 +88,7 @@ a.link-item {
 
 .mr-inner-box {
 	display: flex;
+	/* margin: 5px 5px 10px 5px; */
 	padding: 0 25px;
 	flex-direction: column;
 	align-items: normal;
