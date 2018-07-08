@@ -13,23 +13,31 @@
 		<link rel="stylesheet" href="content/assets/css/style.css">
 	</head>
 	<body class="fx-col bg">
-		
-		<header class="bar">
-			<div class="top-bar">
-				<div class="h__caption-text">
+		<script>
+			document.write('<input id="mw-btn" type="button" name="mw-btn">\n' +
+				'<div id="mwc" class="modal-window--container">\n' +
+				'<div class="mw--inner-box">\n' +
+				'<iframe class="modal__iframe" src="content/Modal_Window.html"></iframe>\n' +
+				'</div>\n' +
+				'</div>\n');
+			document.getElementById("mw-btn").addEventListener('click', function () {
+				document.getElementById("mwc").classList.toggle('show');
+			});
+		</script>
+
+		<header>
+			<div class="header-container-top-bar">
+				<div class="h-caption-logo">
 					<h1>Terraria</h1>
 				</div>
-				<div class="h__capt-page">
-					<h2>Главная страница</h2>
-				</div>
-				<div class="h__des-text">
+				<div class="h-description-book">
 					<h1>Энциклопедия</h1>
 				</div>
 			</div><!-- /top-bar -->
 		</header><!-- /header -->
 
 		<div class="wrapper-m">
-			<main class="wm-page-content">
+			<main class="wm-page-content mr-top-bottom">
 				<section class="mr-inner-box">
 					<div class="section__container">
 						<div class="section__inner by-game__game-box">
@@ -40,7 +48,7 @@
 								<div class="by-game__text-box">
 									<p>Добро пожаловать в Эциклопедию по <b>Terraria</b></p>
 									<p><b>Террария</b> — игра жанра «песочница» <i>(sandbox)</i> в стиле 2D-платформера. Игра отличается настраиваемыми персонажами, случайно сгенерированными мирами, динамической сменой времени суток, возможностью деформации ландшафта и системой крафтинга (создания предметов), которая дает игроку «жить за счёт земли», так как создание предметов необходимо для выживания. Система крафтинга также дает игрокам свободу в обустройстве окружения, начиная от рытья шахт и заканчивая строительством городов.</p>
-									<p>Также это — земля приключений! Земля загадок! Её вы должны оберегать, в ней же вы можете и веселиться. Ваши возможности в Terraria безграничны. Вы — любитель сражений? Великий архитектор? Коллекционер? Путешественник? Каждому найдётся здесь своё место.  Начните с создания основного убежища, затем отправляйтесь добывать <a href="#" title="Руда">руду</a> и другие ресурсы. Создавайте и открывайте для себя более 300-т видов оружия дальнего, ближнего боя и магического, а также брони, которая поможет вам победить сотню различных врагов. Совсем скоро вы столкнётесь лицом к лицу с одним из дюжины боссов. Отправляйтесь <a href="content/Fishing.html" title="Рыбалка">рыбачить</a>, седлать зверей, выискивать <a href="#" title="Парящие острова">парящие острова</a>, строить дома для <a href="#" title="NPC">поселенцев</a>, и многое, многое другое.</p>
+									<p>Также это — земля приключений! Земля загадок! Её вы должны оберегать, в ней же вы можете и веселиться. Ваши возможности в Terraria безграничны. Вы — любитель сражений? Великий архитектор? Коллекционер? Путешественник? Каждому найдётся здесь своё место.  Начните с создания основного убежища, затем отправляйтесь добывать <a href="content/page/Objects/Ore/Ore.html" title="Руда">руду</a> и другие ресурсы. Создавайте и открывайте для себя более 300-т видов оружия дальнего, ближнего боя и магического, а также брони, которая поможет вам победить сотню различных врагов. Совсем скоро вы столкнётесь лицом к лицу с одним из дюжины боссов. Отправляйтесь <a href="content/Fishing.html" title="Рыбалка">рыбачить</a>, седлать зверей, выискивать <a href="#" title="Парящие острова">парящие острова</a>, строить дома для <a href="#" title="NPC">поселенцев</a>, и многое, многое другое.</p>
 									<p>Есстественно в игре имеется <a href="#" title="Коллективный режим">многопользовательский режим</a>.</p>
 								</div>
 							</div>
@@ -113,7 +121,7 @@
 										<a href="#" class="link-item" title="Хитрости и советы">Хитрости и советы</a>
 									</li>
 									<li class="l-item">
-										<a href="#" class="link-item" title="Часто задаваемые вопросы">Часто задаваемые вопросы</a>
+										<a href="content/page/FAG/index.html" class="link-item" title="Часто задаваемые вопросы">Часто задаваемые вопросы</a>
 									</li>
 								</ul><!-- /sidebar__list-item -->
 							</div><!-- /block-container-cnt-row -->
@@ -129,20 +137,20 @@
 										<a href="content/Tools.html" class="link-item" title="Инструменты">Инструменты</a>
 									</li>
 									<li class="l-item">
-										<a href="#" class="link-item" title="Оружие">Оружие</a> и 
+										<a href="content/Weapons.html" class="link-item" title="Оружие">Оружие</a> и 
 										<a href="#" class="link-item" title="Боеприпасы">Боеприпасы</a>
 									</li>
 									<li class="l-item">
 										<a href="#" class="link-item" title="Броня">Броня</a>
 									</li>
 									<li class="l-item">
-										<a href="#" class="link-item" title="Рабочие места">Рабочие места</a>
+										<a href="content/Workplaces.html" class="link-item" title="Рабочие места">Рабочие места</a>
 									</li>
 									<li class="l-item">
-										<a href="content/Coins.html" class="link-item" title="Монеты">Монеты</a>
+										<a href="content/page/Objects/Coins/Coins.html" class="link-item" title="Монеты">Монеты</a>
 									</li>
 									<li class="l-item">
-										<a href="content/Ore.html" class="link-item" title="Руды">Руды</a>
+										<a href="content/page/Objects/Ore/Ore.html" class="link-item" title="Руды">Руды</a>
 									</li>
 									<li class="l-item">
 										<a href="#" class="link-item" title="Слитки">Слитки</a>
@@ -251,10 +259,10 @@
 								<ul class="sidebar__list-item">
 									
 									<li class="l-item">
-										<a href="#" class="link-item">Редкость</a>
+										<a href="content/Categories-of-Things.html" class="link-item">Редкость</a>
 									</li>
 									<li class="l-item">
-										<a href="#" class="link-item">Рыбалка</a>
+										<a href="content/Fishing.html" class="link-item">Рыбалка</a>
 									</li>
 									<li class="l-item">
 										<a href="#" class="link-item">Скорость атаки</a>
@@ -409,14 +417,15 @@
 
 		<footer>
 			<div class="footer__author">
-				<p>Skylinker</p>
+				<p>Skylinker <a href="https://vk.com/storm_inside_skylinker" title="Storm Inside" target="_blank"><span class="icon-vk" title="Vkontakte: Storm Inside"></span></a></p>
+			</div>
+			<div class="footer__fag">
+				<a href="content/page/FAG/index.html" title="Помощь по функционалу">F.A.G.</a>
 			</div>
 			<div class="footer__email">
-				<p>E-mail: <span>skylinkertu33@gmail.com</span></p>
+				<p><span class="icon-mail" title="По вопросам, обращаться написав в почту на указанный адрес, указав тему обращения"></span><span>skylinkertu33@gmail.com</span></p>
 			</div>
 		</footer><!-- /footer -->
-
-
 
 
 		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>

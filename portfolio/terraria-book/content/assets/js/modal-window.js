@@ -6,10 +6,13 @@ document.write('<input id="mw-btn" type="button" name="mw-btn">\n' +
 	'</div>\n');
 document.getElementById("mw-btn").addEventListener('click', function () {
 	document.getElementById("mwc").classList.toggle('show');
-	// let mwc = document.getElementById('mwc').style;
-	// if (mwc.display === "" || mwc.display === "none") {
-	// 	mwc.display = "block";
-	// } else {
-	// 	mwc.display = "none";
-	// }
 });
+
+// modalMenu = (a) => {
+// 	console.log(a);
+// 	document.getElementById("mwc").classList.toggle('show');
+// 	a.classList.toggle("show-i");
+// 	console.log(document.getElementById("mwc"));
+// }
+
+// document.getElementById('mw-menu').addEventListener("click", modalMenu);

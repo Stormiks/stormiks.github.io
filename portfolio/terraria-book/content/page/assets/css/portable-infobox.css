@@ -1,0 +1,96 @@
+.pi-container td {
+	background-color: initial;
+	padding: 0;
+	border: none;
+	border-radius: 0;
+}
+
+.portable-infobox {
+	clear: right;
+	float: right;
+	padding: 4px;
+	margin: 3px;
+	width: 300px;
+}
+
+.portable-infobox.pi-theme-infobox {
+	background-color: #d7e0af;
+	border: 1px solid #9a8631;
+	border-radius: 4px;
+	font-size: 14px;
+	text-align: center;
+}
+
+.portable-infobox abbr {
+	border-bottom: 1px dashed #a50000;
+	color: #0d688c;
+	cursor: help;
+	font-size: 14px;
+	text-decoration-line: underline;
+	text-decoration-style: dashed;
+}
+.portable-infobox p,
+.portable-infobox a {
+	font-size: 14px;
+	margin: 0;
+}
+.pi-title {
+	color: #fff7e5;
+	background: #c1af69;
+	font-weight: normal;
+	font-size: 17px;
+	padding: 6px;
+	text-shadow: 0 1px 11px #230000;
+	letter-spacing: .5px;
+}
+.pi-image {
+	display: inline-block;
+	padding: 7px;
+	margin: 0;
+}
+
+.pi-header {
+	background: #8c7a38;
+	color: #fff;
+	font-weight: normal;
+	font-size: 15px;
+	letter-spacing: 1.5px;
+	padding: 4px;
+	margin: 0 1px;
+	text-shadow: 0 0 2px #10101fa6;
+}
+.pi-data {
+	display: flex;
+	flex-direction: row;
+	margin: 4px;
+	padding: 2px;
+	width: 97%;
+}
+
+.pi-data-label {
+	font-family: PTSans-NarrowBold;
+	font-size: 15px;
+	flex-basis: 112px;
+	letter-spacing: 0.6px;
+	text-align: left;
+}
+
+.pi-data-value {
+	flex-basis: 165px;
+	line-height: 18px;
+	text-align: left;
+	padding-left: 10px;
+}
+.pi-data-value span > img {
+	margin-left: 3px;
+}
+.pi-data-img {
+	display: inline-block;
+	margin-bottom: -2px;
+}
+
+.pi-data-list {
+	list-style: none;
+	padding: 1px;
+	margin: 0;
+}

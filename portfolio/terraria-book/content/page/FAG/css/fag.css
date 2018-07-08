@@ -1,0 +1,134 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #248290; 
+	font-family: PTSans-NarrowBold;
+}
+
+header {
+	background-color: #efba7b;
+}
+
+.top-bar {
+	display: flex;
+}
+
+.bar-caption-book {
+	margin-right: 12px;
+	padding: 0 10px;
+}
+
+.bar-caption-book h1 {
+	color: #b2ff00e6;
+	text-shadow: -1px 2px 5px #000000bd,
+		1px -2px 13px #73636394;
+	letter-spacing: 2px;
+	font-size: 50px;
+	margin: 5px 0;
+}
+
+.bar-caption-page {
+	padding: 5px;
+}
+
+.bar-caption-page h2 {
+	color: #ffe4c4;
+	font-size: 30px;
+	letter-spacing: 0.5px;
+	text-shadow: -2px 1px 5px #000000a8;
+	text-align: center;
+	margin: 11px 0;
+}
+
+
+main {
+	padding: 6px 15px;
+}
+
+.main-inner-box {
+	display: flex;
+	flex-direction: row;
+}
+
+.m-navigation-sidebar,
+.m-fag-content {
+	padding: 2px 2px 2px 2px;
+}
+
+.m-navigation-sidebar {
+	background-color: #ffc887;
+	margin-left: 3px;
+	border-radius: 3px;
+	height: inherit;
+	/* flex-basis: 400px; */
+	width: 300px;
+	min-width: 300px;
+}
+
+.m-navigation-sidebar > h3,
+.m-fag-content > h3 {
+	margin: 2px;
+	padding: 6px 2px;
+}
+
+.m-navigation-sidebar > h3 {
+	text-align: center;
+	background-color: #248290;
+	color: #faebd7;
+	letter-spacing: 1.7px;
+}
+
+.navigation-box {
+	margin-right: 3px;
+}
+
+.navigation-box .navigation-list-question {
+	padding-left: 26px;
+	list-style-position: outside;
+	list-style-type: square;
+	margin: 6px 3px;
+}
+
+.list-question a {
+	color: #584f47;
+	font-size: 16px;
+	letter-spacing: 1px;
+	text-decoration: none;
+}
+
+.list-question {
+	padding: 4px;
+	transition: all .3s ease-in-out 0s;
+}
+
+.list-question:hover {
+	background-color: #fff;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 0 #000;
+}
+
+.list-question:hover a {
+	color: #000;
+	text-decoration-line: underline;
+	text-shadow: 0 0 1px #0000002e;
+}
+
+.m-fag-content {
+	padding-left: 20px;
+}
+
+.list-answer {
+	background-color: #2f4f4f;
+	list-style: none;
+}
+
+.list-answer li {
+	color: #ffebcd;
+	/* display: none; */
+	font-family: monospace;
+	font-size: 14px;
+	padding: 1px 0px;
+}
