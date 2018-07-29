@@ -269,11 +269,19 @@ h1, h2, h3, h4, h5, h6 {
 	justify-content: center;
 }
 
+.main-container a {
+	color: #0660bd;
+	font-size: 18px;
+}
+.main-container a:hover {
+	text-decoration: underline;
+}
+
 .info-caption {
 	position: relative;
 }
 
-.info-caption h3 {
+.info-caption {
 	color: #444343;
 	font-family: 'exo_2_semi_bolditalic';
 	font-size: 24pt;
@@ -281,19 +289,20 @@ h1, h2, h3, h4, h5, h6 {
 	justify-content: center;
 }
 
-.info-caption h3::before {
+.info-caption span::before {
 	content: "";
 	border-bottom: 2px solid #229dff;
 	position: absolute;
-	width: 80%;
-	bottom: 28%;
+	width: 100%;
+	bottom: 0;
 }
 /* Блок обо мне */
 
 .my-info p {
-	text-align: left;
 	font-family: 'exo_2_lightregular';
+	font-size: 20px;
 	margin: 50px 0;
+	text-align: left;
 }
 
 .my-info em {
@@ -400,6 +409,7 @@ h1, h2, h3, h4, h5, h6 {
 	-webkit-box-shadow: 0px 5px 11px 1px #7b7b7b, inset 0px 0px 1px 1px #8888883b;
 }
 
+
 .block-cell > figure {
 	-ms-align-items: center;
 	-webkit-box-align: center;
@@ -440,20 +450,26 @@ h1, h2, h3, h4, h5, h6 {
 	color: #9E9595;
 	padding: 3px;
 	margin-top: 10px;
+	opacity: 0;
+}
+.block-cell:hover > a {
+	opacity: 1;
+	transition: all .15s ease-in 0s;
 }
 
 .block-cell > a:hover {
-	border-radius: 7px;
-	background-color: #c9d1d8;
-	color: #124861;
-	padding: 3px;
+	border-radius: 12px;
+	background-image: linear-gradient(to top, #e0cea4, #03a9f43b);
+	color: #02202d;
+	letter-spacing: 1.3px;
+	padding: 5px 14px;
 	-webkit-text-decoration-style: solid;
 	text-decoration-style: solid;
 	-webkit-text-decoration-line: underline;
 	text-decoration-line: underline;
 	-webkit-text-decoration-color: #089adc;
-	text-decoration-color: #089adc;
-	box-shadow: -1px 2px 2px 0px #0000008f, inset 0 0 9px 4px #8db7da29;
+	text-decoration-color: #84740e;
+	box-shadow: 0px 1px 11px 0px #0000008f, inset 0 0 11px 1px #8db7da29;
 }
 /* Конец блока портфолио */
 
