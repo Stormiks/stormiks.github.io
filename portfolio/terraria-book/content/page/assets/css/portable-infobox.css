@@ -35,13 +35,42 @@
 	margin: 0;
 }
 .pi-title {
-	color: #fff7e5;
 	background: #c1af69;
-	font-weight: normal;
-	font-size: 17px;
 	padding: 6px;
-	text-shadow: 0 1px 11px #230000;
+	position: relative;
+}
+.pi-title > span:nth-child(1) {
+	color: #fff7e5;
+	font-weight: normal;
+	font-size: 16px;
+	text-shadow: 0 1px 11px #230000ad;
 	letter-spacing: .5px;
+}
+
+.pi-title > span:nth-child(2) {
+	background: #f0f8ff8a;
+	box-shadow: -1px 1px 5px 0px #0000009c;
+	color: #5d4102;
+	font-size: 13px;
+	font-weight: normal;
+	position: absolute;
+	right: 0%;
+	top: 1%;
+	text-shadow: 1px 2px 3px #4c301438;
+	transition: .2s ease-in 0s;
+	padding: 1px 3px 3px 3px;
+	border-radius: 4px;
+}
+.pi-title > span:nth-child(2):hover {
+	background: #6b5e2f;
+	padding: 2px 4px;
+	border-radius: 5px;
+	color: #00fdff;
+	cursor: help;
+	top: 14%;
+	font-size: 20px;
+	text-decoration: underline;
+	text-shadow: 0 0 16px #132ab3, 0 0 1px #ffffff9c;
 }
 .pi-image {
 	display: inline-block;
@@ -80,6 +109,10 @@
 	line-height: 18px;
 	text-align: left;
 	padding-left: 10px;
+}
+.pi-data-value ul {
+	margin: 0;
+	padding-left: 15px;
 }
 .pi-data-value span > img {
 	margin-left: 3px;

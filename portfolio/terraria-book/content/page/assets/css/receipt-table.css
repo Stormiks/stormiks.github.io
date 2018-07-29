@@ -1,0 +1,33 @@
+.inline-table {
+	background-color: #eceae7;
+	border: 2px solid #8c7a38;
+	border-radius: 4px;
+  box-shadow: -5px 2px 9px 0 #a497638a, inset 0 0 4px 0px #9E9E9E;
+	padding: 3px;
+	text-align: center;
+}
+
+.inline-table th,
+.inline-table td {
+	padding: 6px;
+}
+
+.inline-table th {
+	background-color: #d6c481;
+	color: #000;
+	border-radius: 0;
+}
+
+.inline-table td {
+	background-color: inherit;
+	border: none;
+	padding: 8px;
+}
+
+.inline-table td:nth-child(1) {
+	max-width: 160px;
+}
+
+.inline-table img {
+	margin-right: 4px;
+}

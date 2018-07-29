@@ -30,6 +30,14 @@ img {
 	border-style: none;
 }
 
+kbd {
+	font-size: 17px;
+	background-color: #e4c599;
+	border-radius: 2px;
+	padding: 2px 5px;
+	box-shadow: -1px 1px 4px 0 #000;
+}
+
 .l-item {
 	list-style-type: disc;
 }
@@ -39,7 +47,7 @@ a {
   text-shadow: 0 0 0 #000000a6;
   letter-spacing: 0.2px;
   font-family: Ubuntu;
-  font-size: 17px;
+  font-size: 15px;
   position: relative;
 }
 
@@ -171,7 +179,8 @@ input#mw-btn:focus {
 	background-color: #b9e1e6;
 	padding: 7px 12px;
 	border-radius: 13px;
-	box-shadow: 0 1px 11px 0px #ffffff30, inset 1px -1px 4px 0 #000;
+	box-shadow: 0 1px 11px 0px #ffffff30,
+		inset 1px -1px 4px 0 #000;
 	margin-bottom: 8px;
 }
 .lists__i-search {
@@ -550,9 +559,12 @@ main {
 	color: #3b3d3e;
 	text-decoration: underline solid #000;
 	font-family: PTSans-NarrowBold;
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: normal;
 	letter-spacing: 2px;
+}
+.article__inner-box b > a {
+	font-size: 20px;
 }
 
 .article__inner-box > p {
@@ -606,7 +618,7 @@ main {
 }
 
 .desc-lang-en {
-	color: #9c7d35;
+	color: #655122;
 	font-family: OpenSansLight-Italic;
 	letter-spacing: 2px;
 }
@@ -668,6 +680,11 @@ main {
 
 .img-float-right {
 	float: right;
+}
+
+.float-left {
+	float: left;
+	margin-right: 12px;
 }
 
 .table {
@@ -924,6 +941,9 @@ td > img {
 /** End Block of comments **/
 
 /** Container Lists **/
+.list-container {
+	display: flex;
+}
 .list-container > img {
 	margin-right: 25px;
 }
@@ -972,6 +992,13 @@ td > img {
 	margin: 4px 0;
 }
 
+.list-item li ul {
+	background: #d3dcc6;
+	padding: 6px 6px 6px 30px;
+	box-shadow: -8px 0 7px 0 #b4c79b;
+	border-radius: 4px;
+}
+
 .list-item__li-img > li img {
 	float: left;
 	margin-right: 3px;
@@ -990,7 +1017,7 @@ td > img {
 .history_list {
 	list-style-type: square;
 	padding-left: 18px;
-	margin: 4px 0;
+	margin: 14px 0;
 }
 
 .history_list p {
@@ -999,10 +1026,11 @@ td > img {
 
 .history_list p b {
 	color: #003a4c;
+	font-family: PTSans-NarrowBold;
+	font-size: 18px;
 	text-decoration: none;
 	text-shadow: -1px 1px 38px #3b7b7b;
 	margin-right: 6px;
-	font-family: PTSans-NarrowBold;
 }
 
 b.сongratulations-text {
