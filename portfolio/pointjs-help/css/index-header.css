@@ -1,0 +1,46 @@
+header {
+	flex: 0 0 auto;
+}
+
+.header {
+	display: flex;
+	padding-top: 3px;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.header__title-engine {
+	display: flex;
+	justify-content: flex-start;
+	flex-flow: row nowrap;
+  padding: 0;
+}
+
+.engine-pointjs, .header__title>h1 {
+	font-family: RoundScriptItalic;
+	font-weight: normal;
+	font-style: italic;
+}
+
+.engine-pointjs {
+	font-size: 26px;
+	margin: 0 12px;
+	color: rgba(171, 171, 171, 0.78);
+	text-shadow: 0 0 40px rgb(55, 64, 179);
+}
+
+.engine-version {
+	vertical-align: super;
+	color: #2ad6ff75;
+	text-shadow: -1px 1px 2px rgba(6, 73, 88, 1);
+}
+
+.engine-title {
+	font-size: 28px;
+	flex-grow: 1;
+	text-align: center;
+	color: rgba(249, 249, 249, 0.6);
+	text-shadow: 0px 0px 31px rgb(150, 69, 21);
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+}

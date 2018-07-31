@@ -1,0 +1,29 @@
+footer {
+	flex: 0 0 auto;
+}
+
+.footer {
+	/* border: 1px solid #1CA154; */
+}
+
+.footer__author {
+	margin: 3px 0;
+	padding: 0 10px;
+}
+
+.footer__author>p {
+	text-align: left;
+	font-size: 12px;
+}
+
+.footer__logo {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.footer__logo > .logo {
+	display: flex;
+	align-items: center;
+	margin: 0 14px;
+}

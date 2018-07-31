@@ -1,0 +1,83 @@
+@font-face {
+	font-family: RoundScriptItalic;
+	src: url('fonts/Round Script.ttf') format("TrueType"),
+	local('Times New Roman');
+}
+
+@font-face {
+	font-family: Amltrial;
+	src: url('fonts/AMLTRIAL.ttf') format("TrueType"),
+	local('Times New Roman');
+}
+
+@font-face {
+	font-family: ZapE711I;
+	src: url('fonts/ZapE711I.ttf') format("TrueType"),
+	local('Arial');
+}
+
+@font-face {
+	font-family: Hum521n;
+	src: url('fonts/Hum521n.ttf') format("TrueType"),
+	local('Arial');
+}
+
+@font-face {
+	font-family: SerifRm_;
+	src: url('fonts/SerifRm_.ttf') format("TrueType"),
+	local('Times New Roman');
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box; // При подсчёте всё учитываем
+}
+
+html,
+body {
+	overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+	display: flex;
+	position: relative;
+	background: url('img/Black_16.jpg');
+	background-attachment: fixed;
+	color: #fff;
+	flex-direction: column;
+	font-family: ZapE711I, 'Times New Roman';
+	letter-spacing: 1px;
+}
+
+body::before {
+	content: "Help by PointJS";
+	position: absolute;
+	top: 50%;
+	left: 30.5%;
+	z-index: -1;
+	font-size: 84px;
+	text-shadow: 0px 0px 12px rgba(59, 104, 150, .28);
+	color: rgba(152, 68, 34, 0.27);
+}
+
+header, main, section, aside, nav, footer {
+	display: block;
+}
+
+ul {
+ list-style: none;
+}
+
+body > div {
+	display: none;
+	z-index: 0;
+}
+
+/* @media screen and (max-device-width: 400px) {
+	body::before {
+		content: none;
+	}
+} */
