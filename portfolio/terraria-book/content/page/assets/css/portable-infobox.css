@@ -1,10 +1,12 @@
+.container-portable-nfobox {
+	overflow: hidden;
+}
 .pi-container td {
 	background-color: initial;
 	padding: 0;
 	border: none;
 	border-radius: 0;
 }
-
 .portable-infobox {
 	clear: right;
 	float: right;
@@ -12,7 +14,13 @@
 	margin: 3px;
 	width: 300px;
 }
-
+.container-portable-nfobox .portable-infobox {
+	clear: left;
+	display: inline-block;
+	float: none;
+	width: 250px;
+	max-width: 3000px;
+}
 .portable-infobox.pi-theme-infobox {
 	background-color: #d7e0af;
 	border: 1px solid #9a8631;
@@ -20,7 +28,6 @@
 	font-size: 14px;
 	text-align: center;
 }
-
 .portable-infobox abbr {
 	border-bottom: 1px dashed #a50000;
 	color: #0d688c;
@@ -35,7 +42,7 @@
 	margin: 0;
 }
 .pi-title {
-	background: #c1af69;
+	background-color: #c1af69;
 	padding: 6px;
 	position: relative;
 }
@@ -46,9 +53,8 @@
 	text-shadow: 0 1px 11px #230000ad;
 	letter-spacing: .5px;
 }
-
 .pi-title > span:nth-child(2) {
-	background: #f0f8ff8a;
+	background-color: #f0f8ff8a;
 	box-shadow: -1px 1px 5px 0px #0000009c;
 	color: #5d4102;
 	font-size: 13px;
@@ -62,7 +68,7 @@
 	border-radius: 4px;
 }
 .pi-title > span:nth-child(2):hover {
-	background: #6b5e2f;
+	background-color: #6b5e2f;
 	padding: 2px 4px;
 	border-radius: 5px;
 	color: #00fdff;
@@ -77,9 +83,12 @@
 	padding: 7px;
 	margin: 0;
 }
+.pi-image img:first-child {
+	margin-right: 10px;
+}
 
 .pi-header {
-	background: #8c7a38;
+	background-color: #8c7a38;
 	color: #fff;
 	font-weight: normal;
 	font-size: 15px;
@@ -114,8 +123,17 @@
 	margin: 0;
 	padding-left: 15px;
 }
-.pi-data-value span > img {
+.pi-data-value span > img,
+.pi-data-value p > img {
 	margin-left: 3px;
+}
+.pid-value-hint {
+	border-bottom: 1px dashed #f00;
+	cursor: help;
+}
+.pid-value-hint:hover {
+	border-bottom: 3px dashed #9a6700;
+	color: #b32200;
 }
 .pi-data-img {
 	display: inline-block;
