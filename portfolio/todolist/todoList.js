@@ -13,7 +13,7 @@ window.onload = function () {
 		const txt = document.createTextNode(text);
 		li.id = i;
 		li.className = "list-tasks";
-		li.style.fontSize = fontSizeToTask + 'px';
+		li.style.fontSize = `${fontSizeToTask}px`;
 		li.appendChild(txt);
 		ul.appendChild(li);
 	}
@@ -25,17 +25,14 @@ window.onload = function () {
 			todo = arrTodoLS[i].todo;
 			check = arrTodoLS[i].check;
 			id = arrTodoLS[i].id;
-			if (check === false) {
-				out += '<li class="list-tasks" id="' + id + '">' + todo + '</li>';
-			} else {
-				out += '<li class="list-tasks checked" id="' + id + '">' + todo + '</li>';
-			}
+
+			out = `<li class="list-tasks ${check ? 'checked' : ''}" id="${id}">${todo}</li>`;
 		}
 		ul.innerHTML = out;
 	}
 
 	function proofId() {
-		return String('t' + todoList.length);
+		return String(`t${todoList.length}`);
 	}
 
 	function addItemTodo(text) {
@@ -56,12 +53,12 @@ window.onload = function () {
 	}
 
 	function delItemTodo() {
-		const lL = ul.querySelectorAll('.checked');
-		if (lL.length < 1) {
+		const UL = ul.querySelectorAll('.checked');
+		if (UL.length < 1) {
 			return alert('Выберите удаляемые элементы');
 		}
-		for (let i = 0; i < lL.length; i++) {
-			const id = lL[i].id;
+		for (let i = 0; i < UL.length; i++) {
+			const id = UL[i].id;
 			const el = document.getElementById(id);
 			el.parentNode.removeChild(el);
 			for (let j = 0; j < todoList.length; j++) {
@@ -125,14 +122,14 @@ window.onload = function () {
 		}
 	}
 
-	const op1 = document.getElementById('op1');
-	const op2 = document.getElementById('op2');
-	const op3 = document.getElementById('op3');
+	const op1 = document.getElementById('todo-font-size');
+	const op2 = document.getElementById('todo-background-color');
+	const op3 = document.getElementById('todo-font-color');
 
 	function appFStoListTodo(fSize) {
 		const listTasks = document.getElementsByClassName('list-tasks');
 		for (let r = 0; r < listTasks.length; r++) {
-			listTasks[r].style.fontSize = fSize + 'px';
+			listTasks[r].style.fontSize = `${fSize}px`;
 		}
 	}
 
@@ -149,31 +146,33 @@ window.onload = function () {
 		} else {
 			return function () {
 				let newTodo = prompt('Приветствую тебя пользователь ToDo!\nЭто ваш первый запуск приложения.\nВведите своё первое дело и нажмите \"OK\"');
-				if (newTodo !== '') {
+				if (newTodo) {
 					console.log(newTodo);
 					addItemTodo(newTodo);
-				} else {
-					return false;
 				}
+
+				return false;
 			}();
 		}
 		if (localKey.iAllCheck !== undefined) {
 			document.getElementById('allCheck').checked = Number(localKey.iAllCheck);
 		}
-		if (localKey.fontSize !== "") {
+		if (localKey.settFontSize) {
 			op1.value = localKey.settFontSize;
 			appFStoListTodo(localKey.settFontSize);
 		}
-		if (localKey.settBackgroundColor !== "") {
-			document.querySelector('.form').style.background = "#" + Number(localKey.settBackgroundToDo);
-			op2.value = Number(localKey.settBackgroundToDo);
+		if (localKey.settBackgroundToDo) {
+			let bgColor = localKey.settBackgroundToDo.replace(/"/g, '')
+			document.querySelector('.form').style.background = `#${bgColor}`;
+			op2.value = bgColor;
 		}
-		if (localKey.settFontColorTasks !== "") {
+		if (localKey.settFontColorTasks) {
 			const listTasks = document.getElementsByClassName('list-tasks');
+			let fontColor = localKey.settFontColorTasks.replace(/"/g, '')
 			for (let r = 0; r < listTasks.length; r++) {
-				listTasks[r].style.color = "#" + Number(localKey.settFontColorTasks);
+				listTasks[r].style.color = `#${fontColor}`;
 			}
-			op3.value = Number(localKey.settFontColorTasks);
+			op3.value = fontColor;
 		}
 	}
 
@@ -183,21 +182,21 @@ window.onload = function () {
 	}
 
 	function settBackgroundToDo() {
-		let bColorHex = Number(this.value);
+		let bColorHex = this.value;
 		console.log(typeof (bColorHex));
-		if (typeof (bColorHex) === "number") {
-			document.querySelector('.form').style.background = "#" + this.value;
-			saveIsLS("settBackgroundToDo", Number(this.value));
+		if (bColorHex) {
+			document.querySelector('.form').style.background = `#${this.value}`;
+			saveIsLS("settBackgroundToDo", this.value);
 		}
 	}
 
 	function settFontColorTasks() {
-		let fColorTask = Number(this.value);
+		let fColorTask = this.value;
 		console.log(fColorTask);
-		if (typeof (fColorTask) === "number") {
+		if (fColorTask) {
 			const listTasks = document.getElementsByClassName('list-tasks');
 			for (let r = 0; r < listTasks.length; r++) {
-				listTasks[r].style.color = "#" + fColorTask;
+				listTasks[r].style.color = `#${fColorTask}`;
 			}
 			saveIsLS("settFontColorTasks", fColorTask);
 		}

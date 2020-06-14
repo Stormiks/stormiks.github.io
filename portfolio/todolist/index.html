@@ -13,10 +13,9 @@
 		<link rel="stylesheet" href="assets/btn-ctlrs-f.css">
 	</head>
 	<body>
-		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 		<div class="wrapper" id="page">
 			<div class="form">
-		<input class="input-text" type="text" name="text" id="add-text" placeholder="Введите дело" required="required">
+				<input class="input-text" type="text" name="text" id="add-text" placeholder="Введите дело" required="required">
 				<div class="form-cell">
 					<div class="form-bar">
 						<input class="checkbox" type="checkbox" id="allCheck" name="all"><label for="allCheck"></label>
@@ -32,17 +31,17 @@
 							<h5>Настройки</h5>
 							<div class="s__font-size options">
 								<label for="op1">Размер шрифта:
-									<input class="opt" id="op1" type="range" name="fSize" value="0" max="30">
+									<input class="opt" id="todo-font-size" type="range" name="fSize" value="0" max="30">
 								</label>
 							</div><!--s__font-size-->
 							<div class="s__back-color options">
 								<label for="op2">Фон списка:
-									<input class="opt" id="op2" type="text" name="bColor" maxlength="6">
+									<input class="opt" id="todo-background-color" type="text" name="bColor" maxlength="6">
 								</label>
 							</div><!--s__back-color-->
 							<div class="s__font-color options">
 								<label for="op3">Цвет шрифта дел:
-									<input class="opt" id="op3" type="text" name="fColor" maxlength="6">
+									<input class="opt" id="todo-font-color" type="text" name="fColor" maxlength="6">
 								</label>
 							</div><!--s__font-color-->
 						</div><!--settings-->
