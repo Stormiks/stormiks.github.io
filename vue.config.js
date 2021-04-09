@@ -32,7 +32,7 @@ module.exports = {
   },
 
   publicPath: '/',
-  outputDir: `./${process.env.VUE_APP_OUTPUT_DIR}`,
+  outputDir: `./docs`,
   lintOnSave: process.env.NODE_ENV !== 'production',
   productionSourceMap: process.env.NODE_ENV !== 'production',
 
