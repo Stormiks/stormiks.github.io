@@ -106,7 +106,7 @@ const store = {
         preview: "/hangman.jpg",
         isDevelopments: false,
         description: "HTML5, CSS, JavaScript",
-        url: "/hangman/index.html"
+        url: "https://stormiks.github.io/hangman/"
       },
       {
         title: "Определение",
@@ -127,22 +127,29 @@ const store = {
         preview: "/todolist.jpg",
         isDevelopments: false,
         description: "HTML5, CSS, FlexBox, JS(ES5-ES6), LS",
-        url: "/todolist/index.html"
+        url: "https://stormiks.github.io/todolist/"
       },
       {
         title: "PointJS API",
-        preview: "/pointjs-help.jpg",
+        preview: "/pointjs-help-v2.png",
         isDevelopments: false,
         description: "HTML5, CSS, CSS3, FlexBox, JS(ES5, jQeury, PointJS), LS",
-        url: "/pointjs-help/index.html"
+        url: "https://stormiks.github.io/pointjs-help/"
       },
       {
         title: "Terraria Book",
-        preview: "/terraria-book.jpg",
+        preview: "/terraria-book-v2.png",
+        isDevelopments: false,
+        description: "HTML5, CSS, CSS3, FlexBox",
+        url: "https://stormiks.github.io/terraria-book/"
+      },
+      {
+        title: "Фотогаллерея v2",
+        preview: "/photogallery-v2.1.png",
         isDevelopments: true,
-        description: "HTML5, CSS, CSS3, FlexBox P.S.: В разработке",
-        url: "/terraria-book/index.html"
-      }
+        description: "VueJS 2, Vue Router, Vuex, MirageJS.",
+        url: "https://peaceful-headland-16081.herokuapp.com/"
+      },
     ]
   },
   mutations: {},

@@ -3,13 +3,15 @@
     <figure class="block-images">
       <img
         :src="`/assets/img/project-img${item.preview}`"
-        :alt="item.title" />
+        :alt="item.title"
+      />
     </figure>
     <h4>{{ item.title }}</h4>
     <p :style="{ 'color: red': item.isDevelopments }">{{ item.description }}</p>
     <a
-      :href="`/portfolio${item.url}`"
-      target="_blank">Открыть проект</a>
+      :href="isUrl(item.url)"
+      target="_blank"
+    >Открыть проект</a>
   </article>
 </template>
 
@@ -17,6 +19,12 @@
   export default {
     props: {
       item: Object
+    },
+    methods: {
+      isUrl(str) {
+        const checkProtocol = str.match(/http|https/i)
+        return checkProtocol ? str : `/portfolio${str}`
+      }
     }
   }
 </script>
@@ -39,9 +47,13 @@
       box-shadow: 0 0 9px 0px #696969;
       border-radius: 4px;
       display: flex;
-      margin: 3px auto;
+      margin: 3px 1rem;
       padding: 2px;
       justify-content: center;
+
+      img {
+        width: 100%;
+      }
     }
 
     > h4 {
