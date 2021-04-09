@@ -1,0 +1,14 @@
+{
+  "path-intellisense.extensionOnImport": false,
+  "path-intellisense.absolutePathToWorkspace": true,
+  "path-intellisense.autoSlashAfterDirectory": true,
+  "path-intellisense.showHiddenFiles": true,
+  "path-intellisense.mappings": {
+    "~": "${workspaceRoot}",
+    "@": "${workspaceRoot}/src",
+    "p-views": "${workspaceRoot}/src/views",
+    "assets": "${workspaceRoot}/src/assets",
+    "router": "${workspaceRoot}/src/router",
+    "components": "${workspaceRoot}/src/components"
+  }
+}

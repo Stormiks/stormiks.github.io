@@ -1,0 +1,30 @@
+{
+    "trailingComma":"es5",
+    "useTabs":false,
+    "arrowParens":"avoid",
+    "quoteProps":"as-needed",
+    "bracketSpacing":true,
+    "jsxBracketSameLine":false,
+    "endOfLine": "auto",
+    "prettier/prettier": [
+        "error",
+        {
+            "endOfLine": "auto"
+        }
+    ],
+    "overrides": [
+        {
+            "files":"src/**/*.vue",
+            "options": {
+                "parser":"vue",
+                "vueIndentScriptAndStyle":true
+            }
+        },
+        {
+            "files":"src/**/*.js",
+            "options": {
+                "parser":"babel"
+            }
+        }
+    ]
+}
