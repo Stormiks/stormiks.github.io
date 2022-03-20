@@ -28,7 +28,7 @@
 </template>
 
 <script>
-  import SkilsContainer from "./SkilsContainer";
+  // import SkilsContainer from "./SkilsContainer";
   import SkilsItem from "./SkilsItem";
 
   import { mapState } from "vuex";
@@ -36,7 +36,7 @@
   export default {
     name: "Skils",
     components: {
-      SkilsContainer,
+      // SkilsContainer,
       SkilsItem,
     },
     data() {
