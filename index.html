@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+    <meta charset="utf-8">
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    >
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0"
+    >
+    <link
+      rel="icon"
+      href="/static/favicon.ico"
+    >
+    <title>
+      Skylinker
+    </title>
+    <link
+      rel="stylesheet"
+      href="/assets/vendors/tailwind.css/tailwind.min.css"
+    >
+    <link
+      rel="stylesheet/less"
+      type="text/css"
+      href="/assets/less/style.less"
+    >
+  </head>
+
+  <body class="body">
+    <div
+      x-data="app"
+      class="wrapper"
+      :class="{ wrapper_mobile: device.mobile() }"
+    >
+      <div class="buttonUp">
+        <button
+          class="up"
+          type="button"
+          title="Наверх"
+          x-on:click="scrollTop"
+        >
+          <svg
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 512 512"
+            style="enable-background: new 0 0 512 512"
+            xml:space="preserve"
+          >
+            <path
+              d="M256,0C114.833,0,0,114.833,0,256s114.833,256,256,256s256-114.853,256-256S397.167,0,256,0z M256,472.341 c-119.275,0-216.341-97.046-216.341-216.341S136.725,39.659,256,39.659c119.295,0,216.341,97.046,216.341,216.341 S375.275,472.341,256,472.341z"
+            />
+            <path
+              d="M369.227,283.365l-99.148-99.148c-7.734-7.694-20.226-7.694-27.96,0l-99.148,99.148c-6.365,7.416-6.365,18.382,0,25.798 c7.119,8.309,19.651,9.28,27.96,2.161L256,226.256l85.267,85.069c7.734,7.694,20.226,7.694,27.96,0 C376.921,303.591,376.921,291.098,369.227,283.365z"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <aside class="wrapper-sidebar">
+        <div
+          id="sidebarNav"
+          class="sidebar-nav"
+          :class="{ sidebar_mobile: device.mobile() }"
+        >
+          <h2 class="animated infinite pulse">Резюме <span>Skylinker</span></h2>
+
+          <nav class="nav">
+            <ul class="nav-list">
+              <template
+                x-for="(item, index) in menu"
+                :key="`menu-item-${index}`"
+              >
+                <li class="list-item">
+                  <a
+                    x-bind:href="item.url"
+                    x-bind:title="item.title"
+                  >
+                    <span x-text="item.title"></span>
+                    <template x-if="item.getter">
+                      <span
+                        class="link__count"
+                        x-text="countProjects()"
+                      ></span>
+                    </template>
+                  </a>
+                </li>
+              </template>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <section class="wrapper__page">
+        <header class="header">
+          <div class="header-logo">
+            <h1>Резюме Frontend-разработчика</h1>
+          </div>
+        </header>
+
+
+        <main class="main">
+          <section class="main-container my-info">
+            <a name="my-info"></a>
+            <h3 class="info-caption">
+              <span>Обо мне</span>
+            </h3>
+            <p>
+              Дмитрий <span x-html="fullYear"></span>лет, <em>Front-end</em> разработчик. Имеются навыки: вёрстке
+              сайта с нуля, без дополнительных библиотек и фреймворков; разработка анимации для <em>DOM</em> элементов;
+              добавление динамики с помощью <em>CSS3</em>; внимательность к деталям; хорошие знания БЭМ; подбор шрифтов;
+              базовые умения работать с изображениями.
+            </p>
+          </section>
+
+          <section class="main-container skills">
+            <a name="skills"></a>
+            <h3 class="info-caption">
+              <span>Скилы</span>
+            </h3>
+            <div class="block-flex section__inner">
+              <template
+                x-for="(skill, index) in skillsGroup"
+                :key="`skills-skill-${index}`"
+              >
+                <template x-if="skill">
+                  <div class="container-skill">
+                    <div class="skill">
+                      <h4 x-html="skill.name"></h4>
+                      <progress
+                        :value="skill.progressCur"
+                        :max="skill.progressMax"
+                      ></progress>
+                    </div>
+                  </div>
+                </template>
+              </template>
+            </div>
+          </section>
+
+          <section class="main-container portfolio">
+            <a name="portfolio"></a>
+            <h3 class="info-caption">
+              <span>Портфолио</span>
+            </h3>
+            <template x-if="projects.length">
+
+              <div class="block-row section__inner">
+                <template
+                  x-for="(item, index) in projects"
+                  :key="`project-${index}`"
+                >
+                  <article class="block-cell">
+                    <figure class="block-images">
+                      <img
+                        x-bind:src="`/static/img/project-img${item.preview}`"
+                        x-bind:alt="item.title"
+                      />
+                    </figure>
+                    <h4 x-html="item.title"></h4>
+                    <p
+                      x-bind:style="item.isDevelopments ? { color: 'red' } : {}"
+                      x-html="item.description"
+                    ></p>
+                    <a
+                      x-bind:href="checkRemoteURL(item.url)"
+                      target="_blank"
+                    >Открыть проект</a>
+                  </article>
+                </template>
+              </div>
+            </template>
+          </section>
+
+          <section class="main-container contact">
+            <a name="contact"></a>
+            <h3 class="info-caption">
+              <span>Контакты</span>
+            </h3>
+            <div class="block-cell-contact section__inner">
+              <p>
+                <span>Skype:</span>
+                <a
+                  rel="contact"
+                  href="skype:skylinkertu?call"
+                >Skylinkertu</a>
+              </p>
+              <p>
+                <span>Telegram:</span>
+                <a
+                  rel="contact"
+                  href="https://t.me/skylinker"
+                >Skylinker</a>
+              </p>
+              <p>
+                <span>E-Mail:</span>
+                <a
+                  rel="contact"
+                  href="mailto:skylinkertu33@gmail.com"
+                >Skylinkertu33</a>
+              </p>
+            </div>
+          </section>
+        </main>
+
+        <template x-if="!device.mobile()">
+          <footer class="footer">
+            <div class="block-footer">
+              <figure class="footer-logo">
+                <img
+                  src="/static/img/logo/logo-min.png"
+                  alt="SK"
+                />
+              </figure>
+              <div class="footer-copy">
+                <p>
+                  &copy; <span x-text="currentYear"></span> г.
+                  <a href="http://stormiks.github.io">Skylinker</a>
+                </p>
+              </div>
+            </div>
+          </footer>
+        </template>
+      </section>
+    </div>
+
+
+    <script>
+      const less = {
+        env: "development",
+        async: true,
+        fileAsync: true,
+        poll: 1000,
+        functions: {},
+        dumpLineNumbers: "comments",
+        relativeUrls: false,
+        rootpath: "/"
+      };
+    </script>
+    <script>
+      document.addEventListener('alpine:init', () => {
+        Alpine.data('app', () => ({
+          sidebarNav: null,
+          fullYear: '',
+          currentYear: '',
+          skillsGroup: [
+            {
+              name: "HTML",
+              progressCur: 87,
+              progressMax: 100
+            },
+            {
+              name: "CSS",
+              progressCur: 84,
+              progressMax: 100
+            },
+            {
+              name: "JavaScript",
+              progressCur: 57,
+              progressMax: 100
+            },
+            {
+              name: "PHP",
+              progressCur: 20,
+              progressMax: 100
+            },
+            {
+              name: "LESS",
+              progressCur: 83,
+              progressMax: 100
+            },
+            {
+              name: "jQuery",
+              progressCur: 67,
+              progressMax: 100
+            },
+            {
+              name: "Gulp 4",
+              progressCur: 78,
+              progressMax: 100
+            },
+            {
+              name: "Webpack v4",
+              progressCur: 46,
+              progressMax: 100
+            },
+            {
+              name: "Git",
+              progressCur: 59,
+              progressMax: 100
+            },
+            {
+              name: "VueJS 2, Vuex, Vue Router, Axios",
+              progressCur: 57,
+              progressMax: 100
+            },
+            {
+              name: "Bootstrap",
+              progressCur: 46,
+              progressMax: 100
+            },
+          ],
+          projects: [
+            {
+              title: "Справочник по HTML и CSS",
+              preview: "/01.jpg",
+              isDevelopments: false,
+              description: "HTML and CSS",
+              url: "/book_web/index.html"
+            },
+            {
+              title: "Виселица",
+              preview: "/hangman.jpg",
+              isDevelopments: false,
+              description: "HTML5, CSS, JavaScript",
+              url: "https://skylinker.gitlab.io/hangman/"
+            },
+            {
+              title: "Определение",
+              preview: "/definition.jpg",
+              isDevelopments: false,
+              description: "Мой пример создания игры определения.",
+              url: "/definition/index.html"
+            },
+            {
+              title: "Фотогаллерея",
+              preview: "/photogallery.jpg",
+              isDevelopments: false,
+              description: "HTML5, CSS3, FlexBox, PHP7, jQuery, AJAX.",
+              url: "/photocage/index.html"
+            },
+            {
+              title: "Todo List",
+              preview: "/todolist.jpg",
+              isDevelopments: false,
+              description: "HTML5, CSS, FlexBox, JS(ES5-ES6), LS",
+              url: "https://skylinker.gitlab.io/todolist/"
+            },
+            {
+              title: "PointJS API",
+              preview: "/pointjs-help-v2.png",
+              isDevelopments: false,
+              description: "HTML5, CSS, CSS3, FlexBox, JS(ES5, jQeury, PointJS), LS",
+              url: "https://skylinker.gitlab.io/pointjs-help/"
+            },
+            {
+              title: "Terraria Book",
+              preview: "/terraria-book-v2.png",
+              isDevelopments: false,
+              description: "HTML5, CSS, CSS3, FlexBox",
+              url: "https://skylinker.gitlab.io/terraria-book/"
+            },
+            {
+              title: "Фотогаллерея v2",
+              preview: "/photogallery-v2.1.png",
+              isDevelopments: true,
+              description: "VueJS 2, Vue Router, Vuex, MirageJS.",
+              url: "https://skylinker.gitlab.io/fotocage/"
+            },
+            {
+              title: "Phone mask JS",
+              preview: "/phone-mask-js.jpg",
+              isDevelopments: false,
+              description: "Parcel 2, Tailwindcss",
+              url: "https://skylinker.gitlab.io/phone-mask-js/"
+            },
+          ],
+          menu: [
+            {
+              title: "Home",
+              url: "#up",
+              nameLinkSection: "up"
+            },
+            {
+              title: "About me",
+              url: "#my-info",
+              nameLinkSection: "my-info"
+            },
+            {
+              title: "Skills",
+              url: "#skills",
+              nameLinkSection: "skills"
+            },
+            {
+              title: "Portfolio",
+              url: "#portfolio",
+              nameLinkSection: "portfolio",
+              getter: 'countProjects'
+            },
+            {
+              title: "Contacts",
+              url: "#contact",
+              nameLinkSection: "contact"
+            }
+          ],
+          init() {
+            this.sidebarNav = document.querySelector('#sidebarNav');
+
+            if (!device.mobile())
+              document.addEventListener('onscroll', this.eventScroll);
+
+            document.addEventListener('onreset', (e) => {
+              if (!this.device.mobile())
+                window.removeEventListener('onscroll', this.eventScroll);
+            })
+
+            if (dayjs) {
+              this.fullYear = dayjs(new Date()).diff(dayjs('12-04-1993'), 'years', false)
+              this.currentYear = dayjs().format('YYYY')
+            }
+
+            $(window).scroll(function () {
+              const buttonUp = $(".buttonUp");
+              if ($(this).scrollTop() > 200) buttonUp.fadeIn(0);
+
+
+              if ($(this).scrollTop() < 200) buttonUp.fadeOut(0);
+            });
+          },
+          eventScroll(e) {
+            e.stopPropagation();
+
+            if (e.type === 'scroll')
+              this.sidebarNav.style.transform = `translateY(${window.pageYOffset}px)`;
+          },
+          countProjects() {
+            return this.projects.length
+          },
+          checkRemoteURL(str) {
+            const checkProtocol = str.match(/http|https/i)
+            return checkProtocol ? str : `/portfolio${str}`
+          },
+
+          scrollTop() {
+            $("html, body").animate({ scrollTop: 0 }, 1500);
+          },
+        }))
+      })
+    </script>
+    <script src="/assets/vendors/jquery/jquery-3.6.0.js"></script>
+    <script src="/assets/vendors/current-device/current-device.js"></script>
+    <script src="/assets/vendors/dayjs/dayjs.min.js"></script>
+    <script src="/assets/vendors/alpinejs/cdn.js"></script>
+    <script src="/assets/vendors/less/less.js"></script>
+  </body>
+
+</html>

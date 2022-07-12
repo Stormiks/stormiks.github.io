@@ -1,0 +1,90 @@
+// header,
+// main,
+// footer,
+// section,
+// aside,
+// nav,
+// article,
+// figure {
+//   display: block;
+// }
+
+// html,
+// body {
+//   margin: 0;
+//   padding: 0;
+// }
+
+// ul,
+// a {
+//   text-decoration: none;
+//   list-style: none;
+//   padding-left: 0;
+// }
+
+// img {
+//   margin: 0;
+//   padding: 0;
+// }
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//   display: block;
+// }
+
+/* Анимация */
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  animation-iteration-count: infinite;
+}
+
+/* Pulse */
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse:hover {
+  animation-name: pulse;
+}
+
+/* End Pulse */
+/* Конец анимации */
+
+.body,
+.wrapper {
+  background-color: #e0dfdf;
+  text-align: center;
+}
+
+@media screen and (max-width: 580px) {
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    min-height: 100%;
+  }
+
+  span {
+    display: inline-block;
+  }
+}

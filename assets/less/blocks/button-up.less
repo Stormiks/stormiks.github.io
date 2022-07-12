@@ -1,0 +1,46 @@
+.buttonUp {
+  display: none;
+  cursor: pointer;
+  opacity: 0.4;
+  // background-color: #c0dbe7;
+  // border: 1px solid #0cc5e6;
+  border-radius: 100%;
+  box-shadow: 0 0 5px 3px #979494;
+  position: fixed;
+  /* Фиксируем элемент*/
+  padding: 0;
+  bottom: 10px;
+  left: 10px;
+  z-index: 10;
+  /* Делаем повверх всех элементов */
+  transition: 0.3s;
+
+  &:hover {
+    // background-color: rgba(#5D8AE2, 70%);
+    opacity: 1;
+  }
+
+  button {
+    text-decoration: none;
+    letter-spacing: 2px;
+    background: none;
+    border: none;
+    color: #bfebf7;
+    font-family: @FFE2Bold;
+    font-weight: bold;
+    padding: 5px;
+    height: 40px;
+    width: 40px;
+    display: block;
+    font-size: 1rem;
+
+    svg {
+      fill: #888;
+    }
+
+    &:hover {
+      color: #000;
+      cursor: pointer;
+    }
+  }
+}

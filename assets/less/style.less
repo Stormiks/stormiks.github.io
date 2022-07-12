@@ -1,0 +1,355 @@
+@import "_var";
+@import "_mixin-fonts";
+
+@import "utils/theme-pages";
+@import "blocks/button-up";
+
+
+body.visible {
+  overflow: hidden;
+}
+
+.sidebar__bg-back {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(#000, 60%);
+  z-index: 9;
+
+  &.visible {
+    display: block;
+  }
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  min-height: 100%;
+
+  &__page {
+    display: block;
+  }
+
+  @media (max-width: 580px) {
+    width: auto;
+    display: block;
+    margin: 0;
+
+    &_mobile {
+      box-shadow: 0 0 6px 0 rgba(#000, 70%);
+      margin-bottom: 4em;
+    }
+
+    &-sidebar,
+    &__page {
+      border: none;
+    }
+
+    &__page {
+      margin: 0;
+      padding: 10px;
+      width: auto;
+    }
+  }
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &-logo {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+
+    img {
+      height: 80px;
+      width: 300px;
+      margin-right: 5px;
+    }
+
+    h1 {
+      font-size: 30pt;
+      color: #4c4c4c;
+      text-shadow: 0 0px 10px #7d7676;
+      font-style: italic;
+      font-family: @FFE2Regular;
+      letter-spacing: 3px;
+      font-weight: bold;
+      margin-left: 5px;
+      margin: 10px 0 10px 5px;
+    }
+  }
+
+  @media (max-width: 580px) {
+    display: block;
+
+    &-logo {
+      display: block;
+      height: auto;
+
+      h1 {
+        font-size: 26pt;
+        color: #4c4c4c;
+        text-shadow: 0 0px 10px #7d7676;
+        font-style: italic;
+        font-family: "Exo 2";
+        letter-spacing: 3px;
+        margin: 10px 0;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.footer {
+  display: block;
+
+  &-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+
+    img {
+      margin-right: 3px;
+    }
+  }
+
+  &-copy {
+    margin-left: 0.5rem;
+
+    p {
+      font-family: @FFE2Light;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    a,
+    a:visited {
+      text-decoration: none;
+      font-family: @FFE2SemiBold;
+      font-size: 14pt;
+      color: #adadad;
+      padding: 7px;
+      transition: 0.2s;
+    }
+
+    a:hover {
+      cursor: pointer;
+      /* При наведение курсор - рука */
+      border-radius: 7px;
+      background: #f3f3f3;
+      box-shadow: 0 0 5px #ada9a9;
+      padding: 7px;
+      color: #02adc6;
+      text-decoration: underline solid #847b7b;
+      /* Подчёркивание при наведении */
+    }
+  }
+}
+
+.block-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+.main {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  width: 100%;
+
+  &-container {
+    display: flex;
+    padding: 15px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    a {
+      color: #0660bd;
+      font-size: 18px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @media (max-width: 580px) {
+    display: block;
+  }
+}
+
+.info-caption {
+  color: #444343;
+  font-family: @FFE2SemiBoldItalic;
+  font-size: 24pt;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  span::before {
+    content: "";
+    border-bottom: 2px solid #229dff;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+}
+
+
+.wrapper {
+  &-sidebar {
+    background-color: #f3f3f3;
+    width: 25%;
+
+    @media (max-width: 580px) {
+      border-bottom: 2px solid #d2cece;
+      padding: 5px;
+      width: auto;
+      text-align: center;
+    }
+
+    &.sidebar_mobile {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: fixed;
+      min-height: calc(100% - 1.2rem);
+      height: calc(100vh - 1.2rem);
+      z-index: 10;
+      transform: translateX(-100%);
+      transition: 0.3s;
+
+      &.visible {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &-sidebar,
+  &__page {
+    border-right: 2px solid #d2cece;
+    min-height: 100%;
+    padding: 10px;
+  }
+}
+
+.sidebar {
+  &-nav {
+    width: fit-content;
+    transition: all 0.3s;
+    transform: translateY(0px);
+
+    h2 {
+      font-family: @FFE2Bold;
+      font-size: 28pt;
+      color: #333333;
+
+      span {
+        color: #00b1e4;
+      }
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  .sidebar-nav {
+    margin: 0 auto;
+  }
+
+  .sidebar-nav h2 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 24pt;
+  }
+}
+
+.nav-list {
+  padding: 10px 0;
+
+  @media (max-width: 580px) {
+    margin: 0;
+  }
+}
+
+.list-item {
+  /* Oтступ слева для списка */
+  list-style: none;
+  /* Убираем маркер */
+  text-align: left;
+  padding: 5px 0;
+
+  a {
+    display: flex;
+    text-align: left;
+    padding: 3px;
+    justify-content: space-between;
+    border-bottom: 2px solid #a7a7a7;
+    transition: all 0.3s;
+
+    &,
+    &:visited {
+      text-decoration: none;
+      /* Убираем подчёркивание */
+      font-family: @FFE2SemiBold;
+      font-size: 14pt;
+      color: #adadad;
+      padding: 7px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      /* При наведение курсор - рука */
+      border-radius: 7px;
+      background: #f3f3f3;
+      box-shadow: 0 0 5px #ada9a9;
+      padding: 7px;
+      color: #02adc6;
+      text-decoration: underline solid #847b7b;
+      /* Подчёркивание при наведении */
+    }
+  }
+
+  @media (max-width: 580px) {
+    a {
+      text-align: center;
+    }
+  }
+}
+
+.link__count {
+  display: inline;
+  border-radius: 10px;
+  padding: 0 0.45rem;
+
+  &:hover {
+    background-color: #e0dfdf;
+    color: #444343;
+    box-shadow: 0 0 2px 0 #444343;
+    text-decoration: none !important;
+  }
+}
+
+@import "blocks/my-info";
+@import "blocks/skills";
+@import "blocks/portfolio";
+@import "blocks/contact";
