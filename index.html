@@ -305,85 +305,7 @@
               progressMax: 100
             },
           ],
-          projects: [
-            {
-              title: "Справочник по HTML и CSS",
-              preview: "/01.jpg",
-              isDevelopments: false,
-              description: "HTML and CSS",
-              url: "/book_web/index.html"
-            },
-            {
-              title: "Виселица",
-              preview: "/hangman.jpg",
-              isDevelopments: false,
-              description: "HTML5, CSS, JavaScript",
-              url: "https://skylinker.gitlab.io/hangman/"
-            },
-            {
-              title: "Определение",
-              preview: "/definition.jpg",
-              isDevelopments: false,
-              description: "Мой пример создания игры определения.",
-              url: "/definition/index.html"
-            },
-            {
-              title: "Фотогаллерея",
-              preview: "/photogallery.jpg",
-              isDevelopments: false,
-              description: "HTML5, CSS3, FlexBox, PHP7, jQuery, AJAX.",
-              url: "/photocage/index.html"
-            },
-            {
-              title: "Todo List",
-              preview: "/todolist.jpg",
-              isDevelopments: false,
-              description: "HTML5, CSS, FlexBox, JS(ES5-ES6), LS",
-              url: "https://skylinker.gitlab.io/todolist/"
-            },
-            {
-              title: "PointJS API",
-              preview: "/pointjs-help-v2.png",
-              isDevelopments: false,
-              description: "HTML5, CSS, CSS3, FlexBox, JS(ES5, jQeury, PointJS), LS",
-              url: "https://skylinker.gitlab.io/pointjs-help/"
-            },
-            {
-              title: "Terraria Book",
-              preview: "/terraria-book-v2.png",
-              isDevelopments: false,
-              description: "HTML5, CSS, CSS3, FlexBox",
-              url: "https://skylinker.gitlab.io/terraria-book/"
-            },
-            {
-              title: "Фотогаллерея v2",
-              preview: "/photogallery-v2.1.png",
-              isDevelopments: true,
-              description: "VueJS 2, Vue Router, Vuex, MirageJS.",
-              url: "https://skylinker.gitlab.io/fotocage/"
-            },
-            {
-              title: "SPA Кошелек",
-              preview: "/koshelek-vue2-spa.jpg",
-              isDevelopments: false,
-              description: "VueJS 2, Vue Router, Vuex, Tailwindcss, Binance.com API.",
-              url: "https://skylinker.gitlab.io/vue-spa-koshelek/"
-            },
-            {
-              title: "Phone mask JS",
-              preview: "/phone-mask-js.jpg",
-              isDevelopments: false,
-              description: "Parcel 2, Tailwindcss",
-              url: "https://skylinker.gitlab.io/phone-mask-js/"
-            },
-            {
-              title: "Phone mask JS",
-              preview: "/phone-mask-js.jpg",
-              isDevelopments: false,
-              description: "Alpine.JS, Bootstrap 3",
-              url: "https://skylinker.gitlab.io/timeline-alpine-js/"
-            },
-          ],
+          projects: [],
           menu: [
             {
               title: "Home",
@@ -413,6 +335,10 @@
             }
           ],
           init() {
+            fetch('/static/db-projects.json')
+              .then((data) => data.json())
+              .then((data) => this.projects = data)
+
             this.sidebarNav = document.querySelector('#sidebarNav');
 
             if (!device.mobile())
