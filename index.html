@@ -158,7 +158,7 @@
                   <article class="block-cell">
                     <figure class="block-images">
                       <img
-                        x-bind:src="`/static/img/project-img${item.preview}`"
+                        x-bind:src="`/static/img/projects-webp/${item.preview}`"
                         x-bind:alt="item.title"
                       />
                     </figure>
@@ -363,11 +363,25 @@
               url: "https://skylinker.gitlab.io/fotocage/"
             },
             {
+              title: "SPA Кошелек",
+              preview: "/koshelek-vue2-spa.jpg",
+              isDevelopments: false,
+              description: "VueJS 2, Vue Router, Vuex, Tailwindcss, Binance.com API.",
+              url: "https://skylinker.gitlab.io/vue-spa-koshelek/"
+            },
+            {
               title: "Phone mask JS",
               preview: "/phone-mask-js.jpg",
               isDevelopments: false,
               description: "Parcel 2, Tailwindcss",
               url: "https://skylinker.gitlab.io/phone-mask-js/"
+            },
+            {
+              title: "Phone mask JS",
+              preview: "/phone-mask-js.jpg",
+              isDevelopments: false,
+              description: "Alpine.JS, Bootstrap 3",
+              url: "https://skylinker.gitlab.io/timeline-alpine-js/"
             },
           ],
           menu: [
