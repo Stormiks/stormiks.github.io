@@ -525,8 +525,23 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     directiveHandlers[name] = callback;
   }
   function directives(el, attributes, originalAttributeOverride) {
+    attributes = Array.from(attributes);
+    if (el._x_virtualDirectives) {
+      let vAttributes = Object.entries(el._x_virtualDirectives).map(([name, value]) => ({name, value}));
+      let staticAttributes = attributesOnly(vAttributes);
+      vAttributes = vAttributes.map((attribute) => {
+        if (staticAttributes.find((attr) => attr.name === attribute.name)) {
+          return {
+            name: `x-bind:${attribute.name}`,
+            value: `"${attribute.value}"`
+          };
+        }
+        return attribute;
+      });
+      attributes = attributes.concat(vAttributes);
+    }
     let transformedAttributeMap = {};
-    let directives2 = Array.from(attributes).map(toTransformedAttributes((newName, oldName) => transformedAttributeMap[newName] = oldName)).filter(outNonAlpineAttributes).map(toParsedDirectives(transformedAttributeMap, originalAttributeOverride)).sort(byPriority);
+    let directives2 = attributes.map(toTransformedAttributes((newName, oldName) => transformedAttributeMap[newName] = oldName)).filter(outNonAlpineAttributes).map(toParsedDirectives(transformedAttributeMap, originalAttributeOverride)).sort(byPriority);
     return directives2.map((directive2) => {
       return getDirectiveHandler(el, directive2);
     });
@@ -631,6 +646,15 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     "ref",
     "data",
     "id",
+    "radio",
+    "tabs",
+    "switch",
+    "disclosure",
+    "menu",
+    "listbox",
+    "list",
+    "item",
+    "combobox",
     "bind",
     "init",
     "for",
@@ -641,8 +665,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     "show",
     "if",
     DEFAULT,
-    "teleport",
-    "element"
+    "teleport"
   ];
   function byPriority(a, b) {
     let typeA = directiveOrder.indexOf(a.type) === -1 ? DEFAULT : a.type;
@@ -1310,11 +1333,11 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     let attr = el.getAttribute(name);
     if (attr === null)
       return typeof fallback === "function" ? fallback() : fallback;
+    if (attr === "")
+      return true;
     if (isBooleanAttr(name)) {
       return !![name, "true"].includes(attr);
     }
-    if (attr === "")
-      return true;
     return attr;
   }
 
@@ -1373,8 +1396,13 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
 
   // packages/alpinejs/src/binds.js
   var binds = {};
-  function bind2(name, object) {
-    binds[name] = typeof object !== "function" ? () => object : object;
+  function bind2(name, bindings) {
+    let getBindings = typeof bindings !== "function" ? () => bindings : bindings;
+    if (name instanceof Element) {
+      applyBindingsObject(name, getBindings());
+    } else {
+      binds[name] = getBindings;
+    }
   }
   function injectBindingProviders(obj) {
     Object.entries(binds).forEach(([name, callback]) => {
@@ -1387,6 +1415,26 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
       });
     });
     return obj;
+  }
+  function applyBindingsObject(el, obj, original) {
+    let cleanupRunners = [];
+    while (cleanupRunners.length)
+      cleanupRunners.pop()();
+    let attributes = Object.entries(obj).map(([name, value]) => ({name, value}));
+    let staticAttributes = attributesOnly(attributes);
+    attributes = attributes.map((attribute) => {
+      if (staticAttributes.find((attr) => attr.name === attribute.name)) {
+        return {
+          name: `x-bind:${attribute.name}`,
+          value: `"${attribute.value}"`
+        };
+      }
+      return attribute;
+    });
+    directives(el, attributes, original).map((handle) => {
+      cleanupRunners.push(handle.runCleanups);
+      handle();
+    });
   }
 
   // packages/alpinejs/src/datas.js
@@ -1422,7 +1470,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     get raw() {
       return raw;
     },
-    version: "3.10.2",
+    version: "3.10.5",
     flushAndStopDeferringMutations,
     dontAutoEvaluateFunctions,
     disableEffectScheduling,
@@ -2565,42 +2613,24 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   mapAttributes(startingWith(":", into(prefix("bind:"))));
   directive("bind", (el, {value, modifiers, expression, original}, {effect: effect3}) => {
     if (!value) {
-      return applyBindingsObject(el, expression, original, effect3);
+      let bindingProviders = {};
+      injectBindingProviders(bindingProviders);
+      let getBindings = evaluateLater(el, expression);
+      getBindings((bindings) => {
+        applyBindingsObject(el, bindings, original);
+      }, {scope: bindingProviders});
+      return;
     }
     if (value === "key")
       return storeKeyForXFor(el, expression);
     let evaluate2 = evaluateLater(el, expression);
     effect3(() => evaluate2((result) => {
-      if (result === void 0 && expression.match(/\./))
+      if (result === void 0 && typeof expression === "string" && expression.match(/\./)) {
         result = "";
+      }
       mutateDom(() => bind(el, value, result, modifiers));
     }));
   });
-  function applyBindingsObject(el, expression, original, effect3) {
-    let bindingProviders = {};
-    injectBindingProviders(bindingProviders);
-    let getBindings = evaluateLater(el, expression);
-    let cleanupRunners = [];
-    while (cleanupRunners.length)
-      cleanupRunners.pop()();
-    getBindings((bindings) => {
-      let attributes = Object.entries(bindings).map(([name, value]) => ({name, value}));
-      let staticAttributes = attributesOnly(attributes);
-      attributes = attributes.map((attribute) => {
-        if (staticAttributes.find((attr) => attr.name === attribute.name)) {
-          return {
-            name: `x-bind:${attribute.name}`,
-            value: `"${attribute.value}"`
-          };
-        }
-        return attribute;
-      });
-      directives(el, attributes, original).map((handle) => {
-        cleanupRunners.push(handle.runCleanups);
-        handle();
-      });
-    }, {scope: bindingProviders});
-  }
   function storeKeyForXFor(el, expression) {
     el._x_keyExpression = expression;
   }
@@ -2632,7 +2662,9 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
     let evaluate2 = evaluateLater(el, expression);
     if (!el._x_doHide)
       el._x_doHide = () => {
-        mutateDom(() => el.style.display = "none");
+        mutateDom(() => {
+          el.style.setProperty("display", "none", modifiers.includes("important") ? "important" : void 0);
+        });
       };
     if (!el._x_doShow)
       el._x_doShow = () => {
