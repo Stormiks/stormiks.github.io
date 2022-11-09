@@ -51,7 +51,7 @@
   {
     "title": "Фотогаллерея v2",
     "preview": "photogallery-v2-min.webp",
-    "isDevelopments": true,
+    "isDevelopments": false,
     "description": "VueJS 2, Vue Router, Vuex, MirageJS.",
     "url": "https://skylinker.gitlab.io/fotocage/"
   },
@@ -72,7 +72,7 @@
   {
     "title": "Timeline Alpine.JS",
     "preview": "timeline-alpine-js-min.webp",
-    "isDevelopments": true,
+    "isDevelopments": false,
     "description": "Alpine.JS, jQuery, Day.JS, Lodash, CKEditor.JS Bootstrap 3.",
     "url": "https://skylinker.gitlab.io/timeline-alpine-js/",
     "browserSupport": "Latest 20 versions with up-to-date Chromium engine",
