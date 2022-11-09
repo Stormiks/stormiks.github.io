@@ -52,14 +52,14 @@
     "title": "Фотогаллерея v2",
     "preview": "photogallery-v2-min.webp",
     "isDevelopments": false,
-    "description": "VueJS 2, Vue Router, Vuex, MirageJS.",
+    "description": "VueJS 2.6, Vue Router, Vuex, MirageJS.",
     "url": "https://skylinker.gitlab.io/fotocage/"
   },
   {
     "title": "SPA Кошелек",
     "preview": "koshelek-vue2-spa-min.webp",
     "isDevelopments": false,
-    "description": "VueJS 2, Vue Router, Vuex, Tailwindcss, Binance.com API.",
+    "description": "VueJS 2.6, Vue Router, Vuex, Tailwindcss, Binance.com API.",
     "url": "https://skylinker.gitlab.io/vue-spa-koshelek/"
   },
   {
