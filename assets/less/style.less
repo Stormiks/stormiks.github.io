@@ -1,8 +1,8 @@
-@import "_var";
-@import "_mixin-fonts";
+@import "./var.less";
+@import "./mixin-fonts.less";
 
-@import "utils/theme-pages";
-@import "blocks/button-up";
+@import "./utils/theme-pages.less";
+@import "./blocks/button-up.less";
 
 
 body.visible {
@@ -196,6 +196,10 @@ body.visible {
   @media (max-width: 580px) {
     display: block;
   }
+}
+
+.section__inner {
+  margin-top: 24px;
 }
 
 .info-caption {
