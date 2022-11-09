@@ -77,5 +77,14 @@
     "url": "https://stormiks.github.io/timeline-alpine-js/",
     "browserSupport": "Latest 20 versions with up-to-date Chromium engine",
     "notes": "<ul><li>Day.JS - does not work correctly in Mozilla Firefox</li></ul>"
+  },
+  {
+    "title": "Weather (HDC1080)",
+    "preview": "weather-min.webp",
+    "isDevelopments": true,
+    "description": "Express.JS, Sequelize ORM, SQLite 3, jQuery, Day.JS, Bootstrap 3.",
+    "url": "https://github.com/Stormiks/weather-express-arduino",
+    "browserSupport": "Latest 20 versions with up-to-date Chromium engine",
+    "notes": "<ul><li>Day.JS - does not work correctly in Mozilla Firefox</li></ul>"
   }
 ]
