@@ -70,6 +70,15 @@
     "url": "https://stormiks.github.io/phone-mask-js/"
   },
   {
+    "title": "Todo Application",
+    "preview": "vuejs-expressjs-todo-1-min.webp",
+    "isDevelopments": false,
+    "description": "Express.JS, Sequelize ORM, SQLite 3, VueJS 2.6, Day.JS, Bootstrap 4.",
+    "url": "https://github.com/Stormiks/vue-express-todo-service",
+    "browserSupport": "Latest 20 versions with up-to-date Chromium engine",
+    "notes": "<ul><li>Day.JS - does not work correctly in Mozilla Firefox</li></ul>"
+  },
+  {
     "title": "Timeline Alpine.JS",
     "preview": "timeline-alpine-js-min.webp",
     "isDevelopments": false,
