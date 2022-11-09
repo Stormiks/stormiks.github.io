@@ -243,21 +243,68 @@
       </section>
     </div>
 
+    <div
+      x-data="noticesHandler"
+      class="fixed top-3 flex flex-col-reverse items-end justify-start w-screen"
+      style="pointer-events:none"
+    >
+      <template
+        x-for="notice in notices"
+        x-bind:key="notice.id"
+      >
+        <div
+          x-show="visible.includes(notice)"
+          x-transition:enter="transition ease-in duration-200"
+          x-transition:enter-start="transform opacity-0 translate-y-2"
+          x-transition:enter-end="transform opacity-100"
+          x-transition:leave="transition ease-out duration-500"
+          x-transition:leave-start="transform translate-x-0 opacity-100"
+          x-transition:leave-end="transform translate-x-full opacity-0"
+          x-on:click="remove(notice.id)"
+          class="rounded mb-4 mr-6 py-3 px-5 flex items-center justify-center text-white shadow-lg font-bold text-lg cursor-pointer"
+          x-bind:class="{
+            'bg-blue-500': notice.type === 'info',
+            'bg-yellow-500': notice.type === 'warning'
+          }"
+          style="pointer-events:all"
+          x-text="notice.text"
+        >
+        </div>
+      </template>
+    </div>
 
     <script>
-      const less = {
-        env: "development",
-        async: true,
-        fileAsync: true,
-        poll: 1000,
-        functions: {},
-        dumpLineNumbers: "comments",
-        relativeUrls: false,
-        rootpath: "/"
-      };
-    </script>
-    <script>
       document.addEventListener('alpine:init', () => {
+        Alpine.data('noticesHandler', () => ({
+          notices: [],
+          visible: [],
+          add(notice) {
+            notice.id = Date.now();
+            this.notices.push(notice);
+            this.fire(notice.id);
+          },
+          fire(id) {
+            this.visible.push(this.notices.find(notice => notice.id == id));
+
+            const timeShown = 4000 * this.visible.length;
+
+            setTimeout(() => {
+              this.remove(id);
+            }, timeShown);
+          },
+          remove(id) {
+            const notice = this.visible.find(notice => notice.id == id);
+            const index = this.visible.indexOf(notice);
+            this.visible.splice(index, 1);
+          },
+          init() {
+            this.add({
+              type: 'warning',
+              text: 'Данная страница устарела и будет заменена в ближайшее время.'
+            });
+          }
+        }));
+
         Alpine.data('app', () => ({
           sidebarNav: null,
           fullYear: '',
@@ -351,7 +398,7 @@
           init() {
             fetch('/static/db-projects.json')
               .then((data) => data.json())
-              .then((data) => this.projects = data)
+              .then((data) => this.projects = data);
 
             this.sidebarNav = document.querySelector('#sidebarNav');
 
@@ -383,11 +430,11 @@
               this.sidebarNav.style.transform = `translateY(${window.pageYOffset}px)`;
           },
           countProjects() {
-            return this.projects.length
+            return this.projects.length;
           },
           checkRemoteURL(str) {
-            const checkProtocol = str.match(/http|https/i)
-            return checkProtocol ? str : `/portfolio${str}`
+            const checkProtocol = str.match(/http|https/i);
+            return checkProtocol ? str : `/portfolio${str}`;
           },
 
           scrollTop() {
