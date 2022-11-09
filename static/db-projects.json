@@ -11,7 +11,7 @@
     "preview": "hangman-min.webp",
     "isDevelopments": false,
     "description": "HTML5, CSS, JavaScript",
-    "url": "https://skylinker.gitlab.io/hangman/"
+    "url": "https://stormiks.github.io/hangman/"
   },
   {
     "title": "Определение",
@@ -32,49 +32,49 @@
     "preview": "todolist-js-min.webp",
     "isDevelopments": false,
     "description": "HTML5, CSS, FlexBox, JS(ES5-ES6), LS",
-    "url": "https://skylinker.gitlab.io/todolist/"
+    "url": "https://stormiks.github.io/todolist/"
   },
   {
     "title": "PointJS API",
     "preview": "point-js-help-min.webp",
     "isDevelopments": false,
     "description": "HTML5, CSS, CSS3, FlexBox, JS(ES5, jQeury, PointJS), LS",
-    "url": "https://skylinker.gitlab.io/pointjs-help/"
+    "url": "https://stormiks.github.io/pointjs-help/"
   },
   {
     "title": "Terraria Book",
     "preview": "terraria-book-min.webp",
     "isDevelopments": false,
     "description": "HTML5, CSS, CSS3, FlexBox",
-    "url": "https://skylinker.gitlab.io/terraria-book/"
+    "url": "https://stormiks.github.io/terraria-book/"
   },
   {
     "title": "Фотогаллерея v2",
     "preview": "photogallery-v2-min.webp",
     "isDevelopments": false,
     "description": "VueJS 2.6, Vue Router, Vuex, MirageJS.",
-    "url": "https://skylinker.gitlab.io/fotocage/"
+    "url": "https://stormiks.github.io/fotocage-app/"
   },
   {
     "title": "SPA Кошелек",
     "preview": "koshelek-vue2-spa-min.webp",
     "isDevelopments": false,
     "description": "VueJS 2.6, Vue Router, Vuex, Tailwindcss, Binance.com API.",
-    "url": "https://skylinker.gitlab.io/vue-spa-koshelek/"
+    "url": "https://stormiks.github.io/vue-spa-koshelek/"
   },
   {
     "title": "Phone mask JS",
     "preview": "phone-mask-js-min.webp",
     "isDevelopments": false,
     "description": "Parcel 2, Tailwindcss",
-    "url": "https://skylinker.gitlab.io/phone-mask-js/"
+    "url": "https://stormiks.github.io/phone-mask-js/"
   },
   {
     "title": "Timeline Alpine.JS",
     "preview": "timeline-alpine-js-min.webp",
     "isDevelopments": false,
     "description": "Alpine.JS, jQuery, Day.JS, Lodash, CKEditor.JS Bootstrap 3.",
-    "url": "https://skylinker.gitlab.io/timeline-alpine-js/",
+    "url": "https://stormiks.github.io/timeline-alpine-js/",
     "browserSupport": "Latest 20 versions with up-to-date Chromium engine",
     "notes": "<ul><li>Day.JS - does not work correctly in Mozilla Firefox</li></ul>"
   }
