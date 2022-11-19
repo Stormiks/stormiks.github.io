@@ -23,6 +23,10 @@
       href="/assets/vendors/tailwind.css/tailwind.min.css?v=2.2.19"
     >
     <link
+      rel="stylesheet"
+      href="/assets/vendors/fancybox/fancybox.css"
+    >
+    <link
       rel="stylesheet/less"
       type="text/css"
       href="/assets/less/style.less"
@@ -171,10 +175,24 @@
                 >
                   <article class="block-cell">
                     <figure class="block-images">
-                      <img
-                        x-bind:src="`/static/img/projects-webp/${item.preview}`"
-                        x-bind:alt="item.title"
-                      />
+                      <template x-if="item.previewLarge">
+                        <a
+                          data-fancybox="images"
+                          x-bind:href="`/static/img/projects-webp/${item.previewLarge}`"
+                          x-bind:data-caption="item.title"
+                        >
+                          <img
+                            x-bind:src="`/static/img/projects-webp/${item.preview}`"
+                            x-bind:alt="item.title"
+                          />
+                        </a>
+                      </template>
+                      <template x-if="!item.previewLarge">
+                        <img
+                          x-bind:src="`/static/img/projects-webp/${item.preview}`"
+                          x-bind:alt="item.title"
+                        />
+                      </template>
                     </figure>
                     <h4 x-html="item.title"></h4>
                     <p
@@ -447,6 +465,7 @@
     <script src="/assets/vendors/current-device/current-device.js?v=0.10.2"></script>
     <script src="/assets/vendors/dayjs/dayjs.min.js"></script>
     <script src="/assets/vendors/alpinejs/cdn.js?v=3.10.5"></script>
+    <script src="/assets/vendors/fancybox/fancybox.js"></script>
   </body>
 
 </html>

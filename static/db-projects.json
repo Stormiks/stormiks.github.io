@@ -9,6 +9,7 @@
   {
     "title": "Виселица",
     "preview": "hangman-min.webp",
+    "previewLarge": "hangman-2x.webp",
     "isDevelopments": false,
     "description": "HTML5, CSS, JavaScript",
     "url": "https://stormiks.github.io/hangman/"
@@ -30,6 +31,7 @@
   {
     "title": "Todo List",
     "preview": "todolist-js-min.webp",
+    "previewLarge": "todolist-js-2x.webp",
     "isDevelopments": false,
     "description": "HTML5, CSS, FlexBox, JS(ES5-ES6), LS",
     "url": "https://stormiks.github.io/todolist/"
@@ -37,6 +39,7 @@
   {
     "title": "PointJS API",
     "preview": "point-js-help-min.webp",
+    "previewLarge": "point-js-help-2x.webp",
     "isDevelopments": false,
     "description": "HTML5, CSS, CSS3, FlexBox, JS(ES5, jQeury, PointJS), LS",
     "url": "https://stormiks.github.io/pointjs-help/"
@@ -44,6 +47,7 @@
   {
     "title": "Terraria Book",
     "preview": "terraria-book-min.webp",
+    "previewLarge": "terraria-book-2x.webp",
     "isDevelopments": false,
     "description": "HTML5, CSS, CSS3, FlexBox",
     "url": "https://stormiks.github.io/terraria-book/"
@@ -51,6 +55,7 @@
   {
     "title": "Фотогаллерея v2",
     "preview": "photogallery-v2-min.webp",
+    "previewLarge": "photogallery-v2-2x.webp",
     "isDevelopments": false,
     "description": "VueJS 2.6, Vue Router, Vuex, MirageJS.",
     "url": "https://stormiks.github.io/fotocage-app/"
@@ -58,6 +63,7 @@
   {
     "title": "SPA Кошелек",
     "preview": "koshelek-vue2-spa-min.webp",
+    "previewLarge": "koshelek-vue2-spa-2x.webp",
     "isDevelopments": false,
     "description": "VueJS 2.6, Vue Router, Vuex, Tailwindcss, Binance.com API.",
     "url": "https://stormiks.github.io/vue-spa-koshelek/"
@@ -65,13 +71,15 @@
   {
     "title": "Phone mask JS",
     "preview": "phone-mask-js-min.webp",
+    "previewLarge": "phone-mask-js-2x.webp",
     "isDevelopments": false,
     "description": "Parcel 2, Tailwindcss",
     "url": "https://stormiks.github.io/phone-mask-js/"
   },
   {
     "title": "Todo Application",
-    "preview": "vuejs-expressjs-todo-1-min.webp",
+    "preview": "vuejs-expressjs-todo-min.webp",
+    "previewLarge": "vuejs-expressjs-todo-2x.webp",
     "isDevelopments": false,
     "description": "Express.JS, Sequelize ORM, SQLite 3, VueJS 2.6, Day.JS, Bootstrap 4.",
     "url": "https://github.com/Stormiks/vue-express-todo-service",
@@ -81,6 +89,7 @@
   {
     "title": "Timeline Alpine.JS",
     "preview": "timeline-alpine-js-min.webp",
+    "previewLarge": "timeline-alpine-js-2x.webp",
     "isDevelopments": false,
     "description": "Alpine.JS, jQuery, Day.JS, Lodash, CKEditor.JS Bootstrap 3.",
     "url": "https://stormiks.github.io/timeline-alpine-js/",
@@ -90,6 +99,7 @@
   {
     "title": "Weather (HDC1080)",
     "preview": "weather-min.webp",
+    "previewLarge": "weather-2x.webp",
     "isDevelopments": true,
     "description": "Express.JS, Sequelize ORM, SQLite 3, jQuery, Day.JS, Bootstrap 3.",
     "url": "https://github.com/Stormiks/weather-express-arduino",
