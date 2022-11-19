@@ -1,4 +1,10 @@
 .portfolio {
+  a[data-fancybox] {
+    &:hover {
+      cursor: zoom-in;
+    }
+  }
+
   .block-row {
     display: flex;
     justify-content: space-around;
@@ -17,7 +23,7 @@
     flex-wrap: wrap;
     transition: 0.2s;
 
-    >figure {
+    > figure {
       align-items: center;
       box-shadow: 0 0 9px 0px #696969;
       border-radius: 4px;
@@ -31,7 +37,7 @@
       }
     }
 
-    >h4 {
+    > h4 {
       color: #2d586c;
       font-family: @FFE2SemiBoldItalic;
       font-weight: bold;
@@ -41,13 +47,13 @@
       width: 100%;
     }
 
-    >p {
+    > p {
       font-size: 10pt;
       font-family: @FFE2Regular;
       text-align: left;
     }
 
-    >a {
+    > a {
       position: absolute;
       bottom: 7px;
       border-radius: 7px;
@@ -62,7 +68,7 @@
       border-radius: 5px;
       box-shadow: 0px 5px 11px 1px #7b7b7b, inset 0px 0px 1px 1px #8888883b;
 
-      >a {
+      > a {
         opacity: 1;
         transition: all 0.15s ease-in 0s;
 

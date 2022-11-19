@@ -177,19 +177,19 @@
                     <figure class="block-images">
                       <template x-if="item.previewLarge">
                         <a
-                          data-fancybox="images"
-                          x-bind:href="`/static/img/projects-webp/${item.previewLarge}`"
+                          data-fancybox
+                          x-bind:href="generateUrlImage(item.previewLarge)"
                           x-bind:data-caption="item.title"
                         >
                           <img
-                            x-bind:src="`/static/img/projects-webp/${item.preview}`"
+                            x-bind:src="generateUrlImage(item.preview)"
                             x-bind:alt="item.title"
                           />
                         </a>
                       </template>
                       <template x-if="!item.previewLarge">
                         <img
-                          x-bind:src="`/static/img/projects-webp/${item.preview}`"
+                          x-bind:src="generateUrlImage(item.preview)"
                           x-bind:alt="item.title"
                         />
                       </template>
@@ -449,6 +449,9 @@
           },
           countProjects() {
             return this.projects.length;
+          },
+          generateUrlImage(nameImg) {
+            return `/static/img/projects-webp/${nameImg}.webp`;
           },
           checkRemoteURL(str) {
             const checkProtocol = str.match(/http|https/i);
