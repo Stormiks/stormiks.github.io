@@ -100,7 +100,7 @@
     "title": "Weather (HDC1080)",
     "preview": "weather-min",
     "previewLarge": "weather-2x",
-    "isDevelopments": true,
+    "isDevelopments": false,
     "description": "Express.JS, Sequelize ORM, SQLite 3, jQuery, Day.JS, Bootstrap 3.",
     "url": "https://github.com/Stormiks/weather-express-arduino",
     "browserSupport": "Latest 20 versions with up-to-date Chromium engine",
