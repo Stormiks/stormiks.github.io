@@ -105,5 +105,13 @@
     "url": "https://github.com/Stormiks/weather-express-arduino",
     "browserSupport": "Latest 20 versions with up-to-date Chromium engine",
     "notes": "<ul><li>Day.JS - does not work correctly in Mozilla Firefox</li></ul>"
+  },
+  {
+    "title": "Car leasing calculator",
+    "preview": "car-leasing-calculator-min",
+    "previewLarge": "car-leasing-calculator-2x",
+    "isDevelopments": false,
+    "description": "Vite, VueJS 2.7, JSX, SCSS.",
+    "url": "https://stormiks.github.io/friendlee-digital-test/"
   }
 ]
