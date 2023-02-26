@@ -434,7 +434,7 @@
               this.currentYear = dayjs().format('YYYY')
             }
 
-            $(window).scroll(function () {
+            $(window).on('scroll', function () {
               const buttonUp = $(".buttonUp");
               if ($(this).scrollTop() > 200) buttonUp.fadeIn(0);
 
