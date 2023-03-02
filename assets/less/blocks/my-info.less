@@ -11,14 +11,18 @@
     color: #0660BD;
   }
 
-  @media (max-width: 580px) {
-    p {
-      margin: 25px 0;
-    }
-  }
-
   ul {
     list-style: circle;
     padding-left: 2em;
+  }
+
+  @media (max-width: 580px) {
+    p, ul {
+      font-size: 1.5rem;
+    }
+
+    p {
+      margin: 25px 0;
+    }
   }
 }

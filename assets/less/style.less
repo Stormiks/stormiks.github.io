@@ -41,7 +41,6 @@ body.visible {
 
     &_mobile {
       box-shadow: 0 0 6px 0 rgba(#000, 70%);
-      margin-bottom: 4em;
     }
 
     &-sidebar,
@@ -273,17 +272,17 @@ body.visible {
       }
     }
   }
-}
 
-@media (max-width: 580px) {
-  .sidebar-nav {
-    margin: 0 auto;
-  }
+  @media (max-width: 580px) {
+    &-nav {
+      margin: 0 auto;
 
-  .sidebar-nav h2 {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-size: 24pt;
+      h2 {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 24pt;
+      }
+    }
   }
 }
 
