@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Фотогаллерея</title>
+        <link rel="stylesheet" href="page/assets/css/forms.css">
+    </head>
+    <body>
+        <form id="validate-form">
+            <h1>Приветствую тебя пользователь!</h1>
+            <div id="inputs">
+                <input id="username" name="name" type="text" placeholder="Логин" autofocus>
+                <input id="password" name="pass" type="password" placeholder="Пароль">
+            </div>
+            <div id="actions">
+                <input type="submit" name="val" id="validate" value="ВОЙТИ">
+                <!-- <a href="#">Забыли пароль?</a> --><a id="register-user" href="#">Регистрация</a>
+            </div>
+        </form>
+
+        <form id="register-form">
+            <h1>Регистрация</h1>
+            <div class="form-line">
+                <label for="lgn">Введите логин: </label>
+                <input type="text" id="lgn" name="login" placeholder="Логин">
+            </div>
+            <div class="form-line">
+                <label for="pass1">Введите пароль: </label>
+                <input type="password" id="pass1" name="password1" placeholder="Пароль">
+            </div>
+            <div class="form-line">
+                <label for="pass2">Подтвердите пароль: </label>
+                <input type="password" id="pass2" name="password2" placeholder="Повторите пароль">
+            </div>
+            <div class="form-line">
+                <input type="submit" id="register" name="reg" value="РЕГИСТРАЦИЯ">
+                <a id="validate-user" href="#">Войти</a>
+            </div>
+        </form>
+        <div id="results">Успешная авторизация!</div>
+        <script type="text/javascript" src="page/jquery-1.8.0.min.js"></script>
+        <script type="text/javascript" src="page/admin/forms.js"></script>
+    </body>
+</html>
