@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<title>Регистрация</title>
+		<link rel="stylesheet" href="../assets/css/form-register.css">
+	</head>
+	<body>
+		<form id="register-form">
+			<h1>Форма регистрации</h1>
+			<div class="form-line">
+				<label for="lgn">Введите логин: </label>
+				<input type="text" id="lgn" name="login" placeholder="Логин - 10 символов" maxlength="10">
+			</div>
+			<div class="form-line">
+				<label for="pass1">Введите пароль: </label>
+				<input type="password" id="pass1" name="password1" placeholder="Пароль">
+			</div>
+			<div class="form-line">
+				<label for="pass2">Подтвердите пароль: </label>
+				<input type="password" id="pass2" name="password2" placeholder="Повторите пароль">
+			</div>
+			<div class="form-line">
+				<input type="submit" id="reg" name="register" value="Регистрация">
+				<a href="../../">Войти</a>
+			</div>
+		</form>
+		<div id="result-register">Регистрация прошла успешно!</div>
+		<script type="text/javascript" src="../jquery-1.8.0.min.js"></script>
+		<script type="text/javascript" src="register-form.js"></script>
+	</body>
+</html>

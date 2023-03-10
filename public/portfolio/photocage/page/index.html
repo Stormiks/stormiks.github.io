@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html">
+		<title>Фотогаллерея</title>
+		<link rel="stylesheet" href="assets/css/style.css">
+	</head>
+	<body class="body">
+		<div class="wrapper">
+			<header class="header">
+				<div class="head">
+					<h1><span>Фотогаллерея</span></h1>
+				</div>
+				<nav class="nav">
+					<div class="list-item link1"><a href="#"><img src="assets/bar-img/home.png" alt="Главная">Главная</a></div>
+					<div class="list-item link2"><a href="gallery/"><img src="assets/bar-img/gallery.png" alt="gallery">Галлерея</a></div>
+					<div class="list-item link3"><a href="my-about.html"><img src="assets/bar-img/my-info.png" alt="my">Обо мне</a></div>
+				</nav>
+			</header>
+			<main class="main">
+	      <section class="main__col-1">
+	        <!-- Область для перетаскивания -->
+	        <div id="drop-files" ondragover="return false" class="col-1__block-upload">
+	          <h3>Пожалуйста выберите изображение на устройстве</h3>
+	          <p><span><a href="help.html">Правила загрузки</a></span></p>
+	          <p>Перетащите изображение сюда</p>
+	          <form id="frm" enctype="multipart/form-data">
+	             <input type="file" id="files" name="picture">
+	             <input type="submit" value="Загрузить">
+	          </form>
+	        </div>
+	      </section><!--main__col-1-->
+	      <section class="main__col-2">
+	        <div id="result" class="coll-2__block-gallery">
+						<div id="uploaded-holder"> 
+							<div id="dropped-files">
+								<div id="upload-button">
+									<div class="center">
+										<span>0 Файлов</span>
+										<a href="#" class="upload">Загрузить</a>
+										<a href="#" class="delete">Удалить</a>
+										<div id="loading">
+											<div id="loading-bar">
+												<div class="loading-color"></div>
+											</div>
+											<div id="loading-content"></div>
+										</div>
+									</div><!--center-->
+								</div><!--upload-button-->
+							</div><!--dropped-files-->
+						</div><!--uploaded-holder-->
+						<div id="file-name-holder">
+							<ul id="uploaded-files">
+								<h1>Загруженные файлы</h1>
+							</ul>
+						</div>
+	        </div><!--coll-2__block-gallery-->
+	      </section><!--main__col-2-->
+	    </main><!--main-->
+	    <footer class="footer">
+	      <div class="footer-info">
+	        <p class="copy">&copy; 2017 Сайт сделан <a href="http://skylinkertu.github.io">Skylinker</a></p>
+	      </div>
+	    </footer>
+	  </div><!--wrapper-->
+	  <script type="text/javascript" src="jquery-1.8.0.min.js"></script>
+	  <script type="text/javascript" src="gallery/ajax-uploader.js"></script>
+	</body>
+</html>
